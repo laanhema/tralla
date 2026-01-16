@@ -1,0 +1,41 @@
+.task-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  position: relative;
+  cursor: text;
+}
+
+.deleteTaskButton {
+  height: 1.5rem;
+  width: 1.5rem;
+  z-index: 99;
+  position: absolute;
+  top: 1rem;
+  right: 0.7rem;
+}
+
+.taskDoneButton {
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 99;
+  position: absolute;
+  top: 0.7rem;
+  right: 11.4rem;
+  border-radius: 100%;
+  height: 2rem;
+  width: 2rem;
+  justify-content: center;
+}
+
+.task-button-input {
+  cursor: text;
+}
+
+.taskDoneButton:hover {
+  filter: brightness(1.2) saturate(1.5);
+}
+
+.task-container {
+  position: relative;
+}

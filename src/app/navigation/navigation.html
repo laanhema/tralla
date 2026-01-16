@@ -1,0 +1,60 @@
+<header tuiNavigationHeader>
+
+  <!-- logo and app title, acts as home link when clicked on -->
+  <span tuiNavigationLogo style="margin: 0;">
+    <a routerLink="/">
+      <tui-icon icon="@tui.square-check-big" />
+
+      <span tuiFade>Tralla</span>
+    </a>
+  </span>
+
+  <!-- boards links -->
+  <span tuiNavigationSegments>
+    @for (board of boards(); track board.bid) {
+    <a [routerLink]="['/board', board.bid]" appearance="secondary-grayscale" tuiButton>
+      {{ board.title }}
+    </a>
+    }
+  </span>
+
+  <!-- separator -->
+  <hr />
+
+  <!-- right side menu -->
+  <div class="rightSideMenuContainer">
+    <button id="createBoardButton" appearance="secondary-grayscale" iconStart="@tui.plus" tuiButton type="button"
+      (click)="openModalFunction()">
+      Create Board
+    </button>
+
+    <!-- modal ikkuna -->
+    <ng-template let-observer [tuiDialogOptions]="{label: 'Insert title for new board', size: 's'}"
+      [(tuiDialog)]="modalOpen">
+
+      <label tuiLabel>
+        Name of the board:
+        <tui-textfield>
+          <textarea placeholder="New Board" tuiTextarea [(ngModel)]="newBoardName"></textarea>
+        </tui-textfield>
+      </label>
+      <p>
+        <button tuiButton type="submit" (click)="createNewBoard()">
+          Create board
+        </button>
+      </p>
+    </ng-template>
+
+    <!-- dark mode slider -->
+    <span class="darkModeSlider">
+      <label tuiLabel>
+        <input size="s" tuiSwitch type="checkbox" [(ngModel)]="darkModeSliderOn" />
+        <small>Dark Mode</small>
+      </label>
+    </span>
+
+    <!-- placeholder avatar picture -->
+    <tui-avatar appearance="negative" src="@tui.user" />
+  </div>
+
+</header>

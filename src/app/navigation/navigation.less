@@ -1,0 +1,58 @@
+.rightSideMenuContainer {
+  display: flex;
+}
+
+[tuiNavigationHeader] {
+  block-size: 100% !important;
+  flex-wrap: wrap;
+  position: static !important;
+  gap: 0.5rem !important;
+}
+
+[tuiNavigationLogo] {
+  padding: 0.5rem 0.25rem 0.5rem 0.5rem !important;
+}
+
+[tuiNavigationLogo] a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[tuiNavigationHeader]::before {
+  border-radius: 0;
+  display: none;
+}
+
+.darkModeSlider {
+  margin-inline-end: 0.5rem !important;
+  align-content: center !important;
+}
+
+[tuiNavigationSegments] button {
+  flex-shrink: 0 !important;
+  min-width: fit-content !important;
+}
+
+header[tuiNavigationHeader] hr {
+  min-inline-size: 1rem !important;
+}
+
+[tuiLabel] small {
+  align-content: center;
+}
+
+[tuiLabel] input {
+  // align-self: center;
+  // margin: 0;
+  // padding: 0;
+  align-self: center !important;
+  // margin-inline-end: 0 !important;
+  margin-block-start: 0 !important;
+}
+
+#createBoardButton {
+  margin-inline-end: 0.5rem;
+}

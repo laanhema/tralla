@@ -1,0 +1,40 @@
+TODO:
+
+- MVP v
+- create board v
+- delete board v
+- create task v
+- create list v
+- delete list v
+- vaihda jsonserveriltä saatu datan id:t käyttämään numberia eikä string v
+
+- delete task v
+
+- change title of board v, list v, task v
+
+- add jsonserver persistence, oisko ensin vaan perus tallennus näppäin et saako sen toimimaan
+- ja sit seuraavaks sille et päivittää aina uuden tilan kun jotain muuttuu
+
+- favicon
+- error message popup when trying to delete last board (there has to exist at least 1 board)
+
+----------------------------------------------------------------------
+
+TRELLO-CLONE APP
+
+- Newest Angular Version v
+- Angular CDK (cdk = how it works) v
+- taiga-ui v
+
+signalstore or signals + services
+drag & drop from Angular CDK + reordering
+RxJS
+localStorage [initial persistence]
+
+uuid
+zod (validate localStorage data)
+redux-undo
+localforage
+
+scroll
+drag & drop

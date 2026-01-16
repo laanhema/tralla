@@ -1,0 +1,25 @@
+<div class="list-container">
+  <div tuiAppearance="floating" tuiCardLarge class="list" #listContainer>
+    <header tuiHeader>
+      @if (isEditingTitle()) {
+      <input type="text" [(ngModel)]="editedTitle" (blur)="saveTitle()" (keydown.enter)="saveTitle()"
+        (keydown.escape)="endEditingTitle()" class="board-title-input" autofocus />
+      } @else {
+      <h2 class="list-title" tuiTitle (dblclick)="startEditingTitle()">{{ listData()?.title || 'List name' }}</h2>
+      }
+
+      <button class="deleteListButton" appearance="glass" tuiButtonClose tuiIconButton type="button"
+        (click)="deleteList()">Close</button>
+    </header>
+
+    @for (task of listData()?.content; track task.tid) {
+    <app-task [taskData]="task" [boardId]="boardId()" [listId]="listId()" [taskId]="task.tid"></app-task>
+    }
+
+    <footer>
+      <button appearance="secondary" iconStart="@tui.plus" size="m" tuiButton type="button"
+        (click)="createNewTask()">Add a card
+      </button>
+    </footer>
+  </div>
+</div>

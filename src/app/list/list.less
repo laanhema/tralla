@@ -1,0 +1,40 @@
+.list-container {
+  margin: 1rem 1rem 1rem 0rem;
+}
+
+section {
+  display: flex;
+  block-size: 3.125rem;
+  border-radius: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--tui-text-secondary);
+  border: 1px dashed;
+}
+
+.label {
+  font: var(--tui-font-text-l);
+}
+
+.list {
+  width: 16rem;
+  // border-radius: 0.5rem;
+  --t-radius: 0.5rem !important;
+  --t-padding: 1rem !important;
+  --t-space: 1rem !important;
+  overflow-y: auto !important;
+  max-height: 69vh !important;
+}
+
+.deleteListButton {
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
+.list-title {
+  cursor: text;
+}
+
+app-task {
+  max-height: 3.5rem !important; // pirkkaratkaisu, vaihda järkevämpään myöhemmin
+}
