@@ -20,6 +20,8 @@ TODO:
 - favicon
 - error message popup when trying to delete last board (there has to exist at least 1 board)
 - there is a bug where + button flashes when u add a new list
+- localstorage implementation
+- change url to new board on creation
 
 ----------------------------------------------------------------------
 

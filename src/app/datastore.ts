@@ -47,18 +47,20 @@ const DataStore = signalStore(
 
     // --------------------------- CREATE METHODS: ---------------------------
 
-    // creates a new board
+    // creates a new board and returns freshly created board id
     createNewBoard(name: string) {
       const lastUsedIndex = store.boards().at(store.boards().length - 1)!.bid;
+      const newBoardId = lastUsedIndex + 1;
 
       const newBoard: IBoard = {
-        bid: lastUsedIndex + 1,
+        bid: newBoardId,
         title: name,
         content: [],
       };
 
       const update = [...store.boards(), newBoard];
       patchState(store, { boards: update });
+      return newBoardId;
     },
 
     // creates a new list

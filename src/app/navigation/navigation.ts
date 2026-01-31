@@ -1,6 +1,6 @@
 import { Component, signal, effect, output, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { tuiAsPortal, TuiPortals, TuiAutoFocus } from '@taiga-ui/cdk';
 import {
   TuiAppearance,
@@ -50,6 +50,7 @@ export class Navigation extends TuiPortals {
   darkModeSliderOn = signal(true);
   darkModeChangeEvent = output<boolean>();
   modalOpen = signal(false);
+  router = inject(Router);
 
   constructor() {
     super();
@@ -72,8 +73,9 @@ export class Navigation extends TuiPortals {
 
   // creates a new board
   createNewBoard() {
-    this.dataStore.createNewBoard(this.newBoardName);
+    const newBoardId = this.dataStore.createNewBoard(this.newBoardName);
     this.modalOpen.set(false);
     this.newBoardName = '';
+    this.router.navigate([`board/${newBoardId}`]);
   }
 }
