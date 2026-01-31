@@ -35,11 +35,12 @@
       <label tuiLabel>
         Name of the board:
         <tui-textfield>
-          <textarea placeholder="New Board" tuiTextarea [(ngModel)]="newBoardName"></textarea>
+          <textarea (keydown.enter)="createNewBoard(); $event.preventDefault()" tuiAutoFocus placeholder="New Board"
+            tuiTextarea [(ngModel)]="newBoardName"></textarea>
         </tui-textfield>
       </label>
       <p>
-        <button tuiButton type="submit" (click)="createNewBoard()">
+        <button tuiButton (click)="createNewBoard()">
           Create board
         </button>
       </p>

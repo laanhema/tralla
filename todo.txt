@@ -7,6 +7,8 @@ TODO:
 - create list v
 - delete list v
 - vaihda jsonserveriltä saatu datan id:t käyttämään numberia eikä string v
+- when user creates a new list, or a task, it should ask for rename already at that point v
+- fix autofocus on modal window v
 
 - delete task v
 
@@ -17,7 +19,6 @@ TODO:
 
 - favicon
 - error message popup when trying to delete last board (there has to exist at least 1 board)
-- when user creates a new list, or a task, it should ask for rename already at that point
 - there is a bug where + button flashes when u add a new list
 
 ----------------------------------------------------------------------
