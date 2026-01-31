@@ -17,6 +17,7 @@ TODO:
 
 - favicon
 - error message popup when trying to delete last board (there has to exist at least 1 board)
+- when user creates a new list, or a task, it should ask for rename already at that point
 
 ----------------------------------------------------------------------
 
