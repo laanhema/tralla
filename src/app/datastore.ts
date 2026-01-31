@@ -68,7 +68,7 @@ const DataStore = signalStore(
 
       const newList: IList = {
         lid: lastUsedId + 1,
-        title: 'New List',
+        title: '',
         content: [],
       };
 
@@ -315,7 +315,7 @@ const DataStore = signalStore(
 
       patchState(store, { boards: update });
     },
-  }))
+  })),
 );
 
 // exports signalstore for usage
