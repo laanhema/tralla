@@ -44,6 +44,10 @@ const DataStore = signalStore(
       const list = board.content.find((x) => x.lid === listId);
       return list.content;
     },
+    // returns id of the first board
+    getFirstBoardId(): number {
+      return store.boards().at(0)!.bid;
+    },
 
     // --------------------------- CREATE METHODS: ---------------------------
 

@@ -3,27 +3,26 @@ TODO:
 - MVP v
 - create board v
 - delete board v
-- create task v
 - create list v
 - delete list v
+- create task v
+- delete task v
 - vaihda jsonserveriltä saatu datan id:t käyttämään numberia eikä string v
 - when user creates a new list, or a task, it should ask for rename already at that point v
 - fix autofocus on modal window v
-
-- delete task v
-
+- change url to new board on creation v
 - change title of board v, list v, task v
+
+----------------------------------------------------------------------
 
 - add jsonserver persistence, oisko ensin vaan perus tallennus näppäin et saako sen toimimaan
 - ja sit seuraavaks sille et päivittää aina uuden tilan kun jotain muuttuu
-
-- favicon
+- localstorage implementation
 - error message popup when trying to delete last board (there has to exist at least 1 board)
 - there is a bug where + button flashes when u add a new list
-- localstorage implementation
-- change url to new board on creation
+- there is a problem with the ids, it loads board/1 on app start even though its possible it is deleted. also clicking on tralla logo takes to board/1 because / is redirected... how to fix...?
+- favicon
 
-----------------------------------------------------------------------
 
 TRELLO-CLONE APP
 
