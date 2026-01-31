@@ -4,10 +4,11 @@ import { ITask } from '../types/task';
 import { DataStore } from '../datastore';
 import { TuiButtonClose } from '@taiga-ui/kit';
 import { FormsModule } from '@angular/forms';
+import { TuiAutoFocus } from '@taiga-ui/cdk';
 
 @Component({
   selector: 'app-task',
-  imports: [TuiButton, TuiButtonClose, FormsModule],
+  imports: [TuiButton, TuiButtonClose, FormsModule, TuiAutoFocus],
   templateUrl: './task.html',
   styleUrl: './task.less',
 })
@@ -50,7 +51,7 @@ export class Task {
         this.boardId()!,
         this.listId()!,
         this.taskId()!,
-        this.editedTitle.trim()
+        this.editedTitle.trim(),
       );
     }
     this.endEditingTitle();

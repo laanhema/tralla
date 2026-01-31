@@ -91,7 +91,7 @@ const DataStore = signalStore(
 
       const newTask: ITask = {
         tid: lastUsedId + 1,
-        title: 'New Task',
+        title: '',
         taskDone: false,
       };
 

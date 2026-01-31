@@ -1,7 +1,7 @@
 <div class="task-container">
-  @if (isEditingTitle()) {
+  @if (isEditingTitle() || taskData()?.title === '') {
   <input class="task-button-input" [(ngModel)]="editedTitle" (blur)="saveTitle()" (keydown.enter)="saveTitle()"
-    (keydown.escape)="endEditingTitle()" autofocus (dblclick)="startEditingTitle()" />
+    (keydown.escape)="endEditingTitle()" tuiAutoFocus (dblclick)="startEditingTitle()" />
   } @else {
   <button [appearance]="taskDone() ? 'positive' : 'warning'"
     [iconStart]="taskDone() ? '@tui.circle-check' : '@tui.circle'" size="m" tuiIconButton type="button"
