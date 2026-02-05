@@ -1,4 +1,4 @@
-import { Component, signal, effect, output, inject } from '@angular/core';
+import { Component, signal, effect, output, inject, HostListener } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { tuiAsPortal, TuiPortals, TuiAutoFocus } from '@taiga-ui/cdk';
@@ -54,6 +54,16 @@ export class Navigation extends TuiPortals {
   router = inject(Router);
   alerts = inject(TuiAlertService);
 
+  // CTRL+S shortcut for save
+  @HostListener('document:keydown', ['$event'])
+  handleSaveShortcut(event: KeyboardEvent) {
+    // Check for Ctrl+S (Windows/Linux) or Cmd+S (Mac)
+    if ((event.ctrlKey || event.metaKey) && event.key === 's') {
+      event.preventDefault(); // Prevent browser's default save dialog (tries to save page as .html file)
+      this.showSaveChangesAlert();
+    }
+  }
+
   constructor() {
     super();
     // this-viite ei toimi ellei kutsuta super();
@@ -81,7 +91,7 @@ export class Navigation extends TuiPortals {
     this.router.navigate([`board/${newBoardId}`]);
   }
 
-  showNotification() {
+  showSaveChangesAlert() {
     this.alerts.open('', { label: 'Saved changes!' }).subscribe();
   }
 }
