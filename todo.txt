@@ -14,8 +14,10 @@ TODO:
 - change title of board v, list v, task v
 
 - fix stupid html styling stuff and move it to less with !important
-- make lists font smaller
+- make lists font smaller v
 - localstorage implementation <<<<<<
+- text wrap
+- fix autofocus bug of board creating button after usign enter to do it
 
 ----------------------------------------------------------------------
 
