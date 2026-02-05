@@ -1,9 +1,9 @@
 <div class="list-container">
   <div tuiAppearance="floating" tuiCardLarge class="list" #listContainer>
     <header tuiHeader>
-      @if (isEditingTitle()) {
+      @if (isEditingTitle() || listData()?.title === '') {
       <input type="text" [(ngModel)]="editedTitle" (blur)="saveTitle()" (keydown.enter)="saveTitle()"
-        (keydown.escape)="endEditingTitle()" class="board-title-input" autofocus />
+        (keydown.escape)="endEditingTitle()" class="list-title-input" tuiAutoFocus />
       } @else {
       <h2 class="list-title" tuiTitle (dblclick)="startEditingTitle()">{{ listData()?.title || 'List name' }}</h2>
       }

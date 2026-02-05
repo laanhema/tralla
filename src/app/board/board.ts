@@ -80,7 +80,8 @@ export class Board {
 
   deleteBoard(id: number) {
     this.dataStore.deleteBoard(id);
-    this.router.navigate(['/']); // this changes url away from the board we just deleted
+    const firstBoardId = this.dataStore.getFirstBoardId();
+    this.router.navigate([`board/${firstBoardId}`]); // this changes url away from the board we just deleted
   }
 
   createNewList() {

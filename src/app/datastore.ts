@@ -44,21 +44,27 @@ const DataStore = signalStore(
       const list = board.content.find((x) => x.lid === listId);
       return list.content;
     },
+    // returns id of the first board
+    getFirstBoardId(): number {
+      return store.boards().at(0)!.bid;
+    },
 
     // --------------------------- CREATE METHODS: ---------------------------
 
-    // creates a new board
+    // creates a new board and returns freshly created board id
     createNewBoard(name: string) {
       const lastUsedIndex = store.boards().at(store.boards().length - 1)!.bid;
+      const newBoardId = lastUsedIndex + 1;
 
       const newBoard: IBoard = {
-        bid: lastUsedIndex + 1,
+        bid: newBoardId,
         title: name,
         content: [],
       };
 
       const update = [...store.boards(), newBoard];
       patchState(store, { boards: update });
+      return newBoardId;
     },
 
     // creates a new list
@@ -68,7 +74,7 @@ const DataStore = signalStore(
 
       const newList: IList = {
         lid: lastUsedId + 1,
-        title: 'New List',
+        title: '',
         content: [],
       };
 
@@ -91,7 +97,7 @@ const DataStore = signalStore(
 
       const newTask: ITask = {
         tid: lastUsedId + 1,
-        title: 'New Task',
+        title: '',
         taskDone: false,
       };
 
@@ -315,7 +321,7 @@ const DataStore = signalStore(
 
       patchState(store, { boards: update });
     },
-  }))
+  })),
 );
 
 // exports signalstore for usage

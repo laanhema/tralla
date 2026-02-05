@@ -6,6 +6,7 @@ import { Task } from '../task/task';
 import { IList } from '../types/list';
 import { DataStore } from '../datastore';
 import { FormsModule } from '@angular/forms';
+import { TuiAutoFocus } from '@taiga-ui/cdk';
 
 @Component({
   selector: 'app-list',
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     Task,
     TuiButtonClose,
     FormsModule,
+    TuiAutoFocus,
   ],
   templateUrl: './list.html',
   styleUrl: './list.less',
