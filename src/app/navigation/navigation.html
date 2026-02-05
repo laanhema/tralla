@@ -28,6 +28,11 @@
       Create Board
     </button>
 
+    <button id="saveButton" appearance="secondary-grayscale" iconStart="@tui.save" tuiButton type="button"
+      (click)="showSaveChangesAlert()">
+      Save
+    </button>
+
     <!-- modal ikkuna -->
     <ng-template let-observer [tuiDialogOptions]="{label: 'Insert title for new board', size: 's'}"
       [(tuiDialog)]="modalOpen">

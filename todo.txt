@@ -13,16 +13,22 @@ TODO:
 - change url to new board on creation v
 - change title of board v, list v, task v
 
+- fix stupid html styling stuff and move it to less with !important
+- make lists font smaller v
+- localstorage implementation <<<<<<
+- text wrap
+- fix autofocus bug of board creating button after usign enter to do it
+
 ----------------------------------------------------------------------
 
 - add jsonserver persistence, oisko ensin vaan perus tallennus näppäin et saako sen toimimaan
 - ja sit seuraavaks sille et päivittää aina uuden tilan kun jotain muuttuu
-- localstorage implementation
 - error message popup when trying to delete last board (there has to exist at least 1 board)
 - there is a bug where + button flashes when u add a new list
 - there is a problem with the ids, it loads board/1 on app start even though its possible it is deleted. also clicking on tralla logo takes to board/1 because / is redirected... how to fix...?
 - favicon
 
+----------------------------------------------------------------------
 
 TRELLO-CLONE APP
 
