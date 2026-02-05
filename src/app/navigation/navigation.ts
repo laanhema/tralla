@@ -4,6 +4,7 @@ import { Router, RouterLink } from '@angular/router';
 import { tuiAsPortal, TuiPortals, TuiAutoFocus } from '@taiga-ui/cdk';
 import {
   TuiAppearance,
+  TuiAlertService,
   TuiButton,
   TuiDataList,
   TuiDialog,
@@ -51,6 +52,7 @@ export class Navigation extends TuiPortals {
   darkModeChangeEvent = output<boolean>();
   modalOpen = signal(false);
   router = inject(Router);
+  alerts = inject(TuiAlertService);
 
   constructor() {
     super();
@@ -77,5 +79,9 @@ export class Navigation extends TuiPortals {
     this.modalOpen.set(false);
     this.newBoardName = '';
     this.router.navigate([`board/${newBoardId}`]);
+  }
+
+  showNotification() {
+    this.alerts.open('', { label: 'Saved changes!' }).subscribe();
   }
 }
