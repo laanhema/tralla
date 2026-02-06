@@ -14,13 +14,16 @@ TODO:
 - change title of board v, list v, task v
 - make lists font smaller v
 - localstorage implementation v
+- fix stupid html styling stuff and move it to less with !important v
+- fix image bug on header v
 
-- fix stupid html styling stuff and move it to less with !important
-- text wrap
-- fix autofocus bug of board creating button after usign enter to do it
 
 ----------------------------------------------------------------------
 
+- text wrap on tasks
+- make editing mode look good on boards, lists, tasks
+- make checkbox hitbox bigger
+- fix autofocus bug of board creating button after usign enter to do it
 - error message popup when trying to delete last board (there has to exist at least 1 board)
 - there is a bug where + button flashes when u add a new list
 - there is a problem with the ids, it loads board/1 on app start even though its possible it is deleted. also clicking on tralla logo takes to board/1 because / is redirected... how to fix...?

@@ -2,8 +2,6 @@
 
 import { Routes } from '@angular/router';
 import { Board } from './board/board';
-import { inject } from '@angular/core';
-import { DataStore } from './datastore';
 
 const routes: Routes = [
   // writing just "/" to url bar redirects to board 1 by default (board 1 cannot be deleted, there has to be at least one board)
