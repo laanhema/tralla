@@ -17,11 +17,30 @@ const DataStore = signalStore(
 
   // methods
   withMethods((store, dataFetchService = inject(DataFetchService)) => ({
-    // loads data from server
+    // loads data from server / localStorage
     loadData() {
-      dataFetchService.getAllBoards().subscribe((boards) => {
-        patchState(store, { boards });
-      });
+      // either fetch data from json-server (fake REST API) or from localStorage
+      // depending on whether localStorage is empty or not (returns null if it's empty)
+      try {
+        const ls = localStorage.getItem('trallaBoardsLS');
+        // console.log(ls);
+        if (ls !== null) {
+          const lsData = JSON.parse(ls);
+          // console.log(lsData);
+          patchState(store, { boards: lsData });
+        } else {
+          dataFetchService.getAllBoards().subscribe((boards) => {
+            patchState(store, { boards });
+          });
+          localStorage.setItem('trallaBoardsLS', JSON.stringify(store.boards()));
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error(error.message);
+        } else {
+          console.error(error);
+        }
+      }
     },
 
     // --------------------------- GET METHODS: ---------------------------
