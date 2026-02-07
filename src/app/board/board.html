@@ -1,19 +1,20 @@
 <div class="board-container">
   <!-- show board data if its found -->
   @if (board()) {
-  <div class="board-header">
-    <!-- show h2 or input field depending on whether we are editing title or not -->
-    @if (isEditingTitle()) {
-    <input type="text" [(ngModel)]="editedTitle" (blur)="saveTitle()" (keydown.enter)="saveTitle()"
-      (keydown.escape)="endEditingTitle()" class="board-title-input" autofocus />
-    } @else {
-    <h2 class="board-title" (dblclick)="startEditingTitle()">{{ board()?.title }}</h2>
-    }
-    <button appearance="glass" tuiButtonClose tuiIconButton type="button"
-      (click)="deleteBoard(board()!.bid)">Close</button>
-  </div>
   <div class="board-container" (mousedown)="onMouseDown($event)" (mousemove)="onMouseMove($event)"
     (mouseup)="onMouseUp()" (mouseleave)="onMouseUp()">
+
+    <div class="board-header">
+      <!-- show h2 or input field depending on whether we are editing title or not -->
+      @if (isEditingTitle()) {
+      <input type="text" [(ngModel)]="editedTitle" (blur)="saveTitle()" (keydown.enter)="saveTitle()"
+        (keydown.escape)="endEditingTitle()" class="board-title-input" autofocus />
+      } @else {
+      <h2 class="board-title" (dblclick)="startEditingTitle()">{{ board()?.title }}</h2>
+      }
+      <button appearance="glass" tuiButtonClose tuiIconButton type="button"
+        (click)="deleteBoard(board()!.bid)">Close</button>
+    </div>
     <div class="lists-container">
       @for (list of board()?.content; track list.lid) {
       <app-list [listData]="list" [listId]="list.lid" [boardId]="this.boardId()!"></app-list>

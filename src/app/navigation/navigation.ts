@@ -60,7 +60,7 @@ export class Navigation extends TuiPortals {
     // Check for Ctrl+S (Windows/Linux) or Cmd+S (Mac)
     if ((event.ctrlKey || event.metaKey) && event.key === 's') {
       event.preventDefault(); // Prevent browser's default save dialog (tries to save page as .html file)
-      this.showSaveChangesAlert();
+      this.saveChanges();
     }
   }
 
@@ -91,7 +91,9 @@ export class Navigation extends TuiPortals {
     this.router.navigate([`board/${newBoardId}`]);
   }
 
-  showSaveChangesAlert() {
+  saveChanges() {
+    // save data to localStorage
+    localStorage.setItem('trallaBoardsLS', JSON.stringify(this.dataStore.boards()));
     this.alerts.open('', { label: 'Saved changes!' }).subscribe();
   }
 }
