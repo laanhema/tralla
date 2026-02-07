@@ -12,7 +12,7 @@
   <!-- boards links -->
   <span tuiNavigationSegments>
     @for (board of boards(); track board.bid) {
-    <a [routerLink]="['/board', board.bid]" appearance="secondary-grayscale" tuiButton>
+    <a class="boardLink" [routerLink]="['/board', board.bid]" appearance="secondary-grayscale" tuiButton>
       {{ board.title }}
     </a>
     }
