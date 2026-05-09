@@ -1,6 +1,6 @@
 import { TuiRoot } from '@taiga-ui/core';
 // Taiga UI root-elementti (tarvitaan jotta muutkin Taiga UI elementit toimivat)
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Navigation } from './navigation/navigation';
 import { TUI_DARK_MODE } from '@taiga-ui/core';
 import { RouterOutlet } from '@angular/router';
@@ -12,7 +12,7 @@ import { DataStore } from './datastore';
   templateUrl: './app.html',
   styleUrl: './app.less',
 })
-export class App {
+export class App implements OnInit {
   // signalstore
   dataStore = inject(DataStore);
   // dark-mode muuttuja
