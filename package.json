@@ -1,6 +1,6 @@
 {
-  "name": "teht-11-ang-tralla",
-  "version": "0.1.0",
+  "name": "tralla",
+  "version": "1.0.0",
   "scripts": {
     "start": "concurrently \"npm run api\" \"ng serve -o\"",
     "api": "json-server --watch db.json --port 3000",
