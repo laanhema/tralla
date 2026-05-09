@@ -17,7 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideEventPlugins(),
     provideHttpClient(),
     tuiAlertOptionsProvider({
-      label: ({ status }: any) => status[0].toUpperCase() + status.slice(1),
+      label: ({ status }: { status: string }) => status[0].toUpperCase() + status.slice(1),
       appearance: 'neutral',
       autoClose: 4000,
     }),
