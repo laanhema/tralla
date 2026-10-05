@@ -31,8 +31,8 @@ const DataStore = signalStore(
         } else {
           dataFetchService.getAllBoards().subscribe((boards) => {
             patchState(store, { boards });
+            localStorage.setItem('trallaBoardsLS', JSON.stringify(store.boards()));
           });
-          localStorage.setItem('trallaBoardsLS', JSON.stringify(store.boards()));
         }
       } catch (error) {
         if (error instanceof Error) {
